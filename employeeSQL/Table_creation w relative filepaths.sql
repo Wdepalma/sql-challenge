@@ -20,7 +20,7 @@ create table employees(emp_no integer primary key,
 					  hire_date varchar(10));
 					  
 copy employees
-from 'D:\Rutgers bootcamp\Homework Assignments\09-SQL\sql-challenge\data\employees.csv'
+from '..\data\employees.csv'
 DELIMITER ','
 CSV HEADER
 
@@ -31,14 +31,14 @@ Create table Salaries (emp_no integer primary key,
 					  Foreign Key(emp_no) References employees(emp_no));
 
 copy Salaries
-from 'D:\Rutgers bootcamp\Homework Assignments\09-SQL\sql-challenge\data\salaries.csv'
+from '..\data\salaries.csv'
 DELIMITER ','
 CSV HEADER
 
 Create table departments (dept_no varchar(8) PRIMARY KEY ,
 					  dept_name varchar(30));
 copy departments
-from 'D:\Rutgers bootcamp\Homework Assignments\09-SQL\sql-challenge\data\departments.csv'
+from '..\data\departments.csv'
 DELIMITER ','
 CSV HEADER
 
@@ -48,7 +48,7 @@ Create table dept_managers (emp_no integer,
 					  Foreign Key(emp_no) References employees(emp_no),
 					  Foreign Key(dept_no) References departments(dept_no));
 copy dept_managers (dept_no, emp_no)
-from 'D:\Rutgers bootcamp\Homework Assignments\09-SQL\sql-challenge\data\dept_manager.csv'
+from '..\data\dept_manager.csv'
 DELIMITER ','
 CSV HEADER
 
@@ -58,7 +58,7 @@ Create table dept_emp (emp_no integer ,
 					  Foreign Key(emp_no) References employees(emp_no),
 					  Foreign Key(dept_no) References departments(dept_no));
 copy dept_emp 
-from 'D:\Rutgers bootcamp\Homework Assignments\09-SQL\sql-challenge\data\dept_emp.csv'
+from '..\data\dept_emp.csv'
 DELIMITER ','
 CSV HEADER
 
